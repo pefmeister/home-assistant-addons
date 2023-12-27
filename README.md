@@ -11,7 +11,7 @@ addons that i use personally
 Follow [the official instructions](https://home-assistant.io/hassio/installing_third_party_addons/) on the Home Assistant website and use the following URL:
 
 ```txt
-https://github.com/bmanojlovic/home-assistant-addons
+https://github.com/pefmeister/home-assistant-addons
 ```
 
 ## Addons provided by this repository
