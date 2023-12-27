@@ -54,6 +54,8 @@ function set_borg_repo_path {
     bashio::log.debug "Setting BORG_REPO"
     if [ ${#_BORG_REPO_URL} -gt 0 ]; then
         BORG_REPO=${_BORG_REPO_URL}
+        BORG_HOST=`echo "${#_BORG_REPO_URL}" | sed -E 's!ssh://([^@^/]?)@?([^/]+)/.*!\2!g'`
+        bashio::log.debug "BORG_HOST is ${BORG_HOST}"
         bashio::log.debug "BORG_REPO set"
         return
     elif [ ${#_BORG_USER} -gt 0 ];then
