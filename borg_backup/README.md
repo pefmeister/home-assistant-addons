@@ -12,7 +12,7 @@ Few things this addon provides to you are:
 first part is done by home assistant but last two are benefits that [borgbackup](https://www.borgbackup.org/) provides.
 
 ## Install
-1) Add https://github.com/bmanojlovic/home-assistant-addons into supervisor addons-store
+1) Add https://github.com/pefmeister/home-assistant-addons into supervisor addons-store
 2) Install Borg-Backup addon
 3) configure system and addon for backups
 
