@@ -110,13 +110,13 @@ function init_borg_repo {
 
 function borg_create_backup {
     export BACKUP_TIME=$(date  +'%Y-%m-%d-%H:%M')
-    bashio::log.info "Creating snapshot"
-    ha snapshots new --name borg-${BACKUP_TIME} --raw-json --no-progress |tee /tmp/borg_backup_$$
-    bashio::log.info "Snapshot done"
+    bashio::log.info "Creating backup"
+    ha backup new --name borg-${BACKUP_TIME} --raw-json --no-progress |tee /tmp/borg_backup_$$
+    bashio::log.info "Backup done"
     export SNAP_RES=$(jq < /tmp/borg_backup_$$ .result -r)
     # if it is not ok something failed and should be logged anyway
     if [ $SNAP_RES != 'ok' ];then
-        bashio::log.error "Failed creating ha snapshot"
+        bashio::log.error "Failed creating ha backup"
         exit -1
     fi
     export SNAP_SLUG=$(jq < /tmp/borg_backup_$$ -r .data.slug)
