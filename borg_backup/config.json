@@ -3,7 +3,7 @@
   "version": "1.2",
   "slug": "borg_backup",
   "description": "Borgbackup!",
-  "url": "https://github.com/bmanojlovic/home-assistant-borg-backup/",
+  "url": "https://github.com/pefmeister/home-assistant-borg-backup/",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "startup": "before",
   "boot": "manual",
@@ -19,6 +19,7 @@
     "borg_passphrase": "",
     "borg_reponame": "",
     "borg_compression": "",
+    "borg_encryptionkey": "",
     "borg_backup_keep_snapshots": "5"
   },
   "schema": {
@@ -29,7 +30,8 @@
     "borg_passphrase": "str",
     "borg_reponame": "str",
     "borg_compression": "str",
+    "borg_encryptionkey": "str",
     "borg_backup_keep_snapshots": "int"
   },
-  "image": "bmanojlovic/{arch}-borg-backup"
+  "image": "pefmeister/{arch}-borg-backup"
 }
